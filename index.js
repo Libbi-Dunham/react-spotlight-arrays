@@ -41,9 +41,8 @@ export const printUserInfo = ({
 // REQS: use rest parameters
 //  getSum(1, 2, 3) === 6
 //  getSum(1, 2, 3, 4, 5) === 15
-export const getSum = () => {
-  // let sum = 0;
-  // rest.
+export const getSum = (...nums) => {
+  return nums.reduce((acc, elem) => (acc += elem), 0);
 };
 
 // INPUT: an unknown number of arguments
@@ -51,7 +50,9 @@ export const getSum = () => {
 // REQS: use rest parameters
 // getFirstTwoArgs(1, 2, 3, 4, 5) should return [1, 2, [3, 4, 5]]
 // getFirstTwoArgs('a', 'b', 'c', 'd') should return ['a', 'b', ['c', 'd']]
-export const getFirstTwoArgs = () => {};
+export const getFirstTwoArgs = (a, b, ...rest) => {
+  return [a, b, rest];
+};
 
 // INPUT: an object with the following structure
 // {
